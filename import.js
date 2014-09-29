@@ -51,7 +51,7 @@ db.sync().success(function() {
             next();
             return;
         }
-        key = cell.v.toString().toLowerCase().replace(/[^\w\d\s]+/g, '').replace(/^\s+/, '').replace(/\s+$/, '').replace(/\s+/g, '_');
+        key = cell.v.toString().replace('(Meter)', '').replace('(Seconds)', '').toLowerCase().replace(/[^\w\d\s]+/g, '').replace(/^\s+/, '').replace(/\s+$/, '').replace(/\s+/g, '_');
         // new file encountered
         if(key == 'file_name') {
             newfile = true;
@@ -62,7 +62,6 @@ db.sync().success(function() {
             return
         }
         if(newfile) {
-//            console.log('---------------- newfile');
             cell = getCell(sheet, row, 1);
             if(!cell) {
                 next();
@@ -74,7 +73,7 @@ db.sync().success(function() {
             obj[key] = val;
             next();
         } else {
-//            console.log(' -------!!!! datapoint');
+
             obj.pressure = getCell(sheet, row, 0).v;
             obj.depth = getCell(sheet, row, 1).v;
             obj.temperature = getCell(sheet, row, 2).v;

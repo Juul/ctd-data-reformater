@@ -5,18 +5,18 @@ module.exports = function(db) {
         file_name: s.STRING,
         cast_time_utc: s.STRING,
         cast_time_local: s.STRING,
-        sample_date: s.STRING,
+        sample_type: s.STRING,
         location_source: s.STRING,
         default_latitude: s.FLOAT,
         default_altitude: s.FLOAT,
         start_latitude: s.FLOAT,
-        start_longtitude: s.FLOAT,
+        start_longitude: s.FLOAT,
         start_altitude: s.FLOAT,
         start_gps_horizontal_error: s.FLOAT, // meters
         start_gps_vertical_error: s.FLOAT, // meters
         start_gps_number_of_satellites: s.INTEGER,
         end_latitude: s.FLOAT,
-        end_longtitude: s.FLOAT,
+        end_longitude: s.FLOAT,
         end_altitude: s.FLOAT,
         end_gps_horizontal_error: s.FLOAT, // meters
         end_gps_vertical_error: s.FLOAT, // meters
